@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Studios</title>
+    <link rel="icon" href="https://img.icons8.com/?size=80&id=oqrxoYQucToV&format=png">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background-image: url('https://example.com/space-background.jpg'); /* Replace with your space background URL */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .social-link {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            background-size: contain;
+        }
+
+        .discord {
+            background-image: url('https://img.icons8.com/ios-filled/50/ffffff/discord.png');
+        }
+
+        .youtube {
+            background-image: url('https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png');
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        main {
+            padding: 50px;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .job-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .job-card {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffd700;
+            margin: 10px;
+            padding: 20px;
+            width: 180px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .job-card:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <img src="https://img.icons8.com/?size=80&id=oqrxoYQucToV&format=png" alt="Galactic Studios Logo" class="logo">
+            <a href="https://discord.gg/XFNnCtNCv4" class="social-link discord" target="_blank"></a>
+            <a href="https://youtube.com/@gaIactic-studios" class="social-link youtube" target="_blank"></a>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#faq">FAQ</a>
+            <a href="#jobs">Jobs</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Welcome to Galactic Studios</h1>
+            <p>Galactic Studios is a forward-thinking game development company set on creating immersive space experiences!</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email us at: <a href="mailto:support@galacticstudios.com">support@galacticstudios.com</a></p>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>FAQ</h2>
+            <p>Find answers to common questions about our projects, mission, and more.</p>
+        </section>
+
+        <!-- Jobs Section -->
+        <section id="jobs">
+            <h2>Join Our Team</h2>
+            <div class="job-list">
+                <div class="job-card">Game Developer</div>
+                <div class="job-card">Discord Developer</div>
+                <div class="job-card">Web Developer</div>
+                <div class="job-card">General Manager</div>
+                <div class="job-card">Designer/Artist</div>
+                <div class="job-card">Guide</div>
+                <div class="job-card">Tester</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Galactic Studios. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll effect for section links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
