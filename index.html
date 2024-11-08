@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galactic Studios</title>
     <link rel="icon" href="https://img.icons8.com/?size=80&id=oqrxoYQucToV&format=png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Orbitron', sans-serif;
             color: #ffffff;
             background-image: url('https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY.jpg');
             background-size: cover;
@@ -21,31 +22,41 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-y: auto;
         }
 
         header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
         }
 
         .logo {
-            height: 50px;
+            height: 60px;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: rotate(360deg);
         }
 
         .social-link {
-            width: 50;
-            height: 50;
-            margin-left: 10px;
-            background-size: contain;
+            width: 50px;
+            height: 50px;
+            margin-left: 15px;
         }
 
         .social-link img {
-            width: 50;
-            height: 50;
+            width: 50px;
+            height: 50px;
             display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .social-link img:hover {
+            transform: scale(1.2);
         }
 
         nav a {
@@ -58,23 +69,23 @@
         }
 
         nav a:hover {
-            color: #ffd700;
-            transform: scale(1.1);
+            color: #00ffd0;
+            transform: scale(1.2);
         }
 
         h1, h2 {
             font-size: 3em;
-            text-shadow: 0 0 15px #ffd700;
+            text-shadow: 0 0 15px #00ffd0;
             animation: glow 2s ease-in-out infinite alternate;
             margin-bottom: 20px;
         }
 
         @keyframes glow {
             from {
-                text-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700;
+                text-shadow: 0 0 15px #00ffd0, 0 0 30px #00ffd0;
             }
             to {
-                text-shadow: 0 0 25px #ffd700, 0 0 45px #ffd700, 0 0 60px #ffd700;
+                text-shadow: 0 0 25px #00ffd0, 0 0 45px #00ffd0, 0 0 60px #00ffd0;
             }
         }
 
@@ -83,6 +94,9 @@
             padding: 50px;
             text-align: center;
             animation: fadeInUp 1s ease forwards;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            margin: 20px;
         }
 
         #home p, .section p {
@@ -92,7 +106,7 @@
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
-            color: #ffd700;
+            color: #00ffd0;
         }
 
         .job-list {
@@ -103,7 +117,7 @@
 
         .job-card {
             background: rgba(0, 0, 0, 0.8);
-            color: #ffd700;
+            color: #00ffd0;
             margin: 10px;
             padding: 20px;
             width: 200px;
@@ -115,6 +129,7 @@
 
         .job-card:hover {
             transform: scale(1.1);
+            box-shadow: 0 0 15px #00ffd0;
         }
 
         footer {
@@ -123,6 +138,34 @@
             background: rgba(0, 0, 0, 0.7);
             width: 100%;
             position: relative;
+        }
+
+        .apply-info {
+            font-size: 1.3em;
+            color: #ffd700;
+            margin-top: 20px;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                text-shadow: 0 0 10px #ffd700;
+            }
+            50% {
+                text-shadow: 0 0 25px #ffd700, 0 0 50px #ffd700;
+            }
         }
     </style>
 </head>
@@ -141,7 +184,7 @@
         <nav>
             <a href="#home" onclick="showSection('home')">HOME</a>
             <a href="#contact" onclick="showSection('contact')">CONTACT</a>
-            <a href="#faw" onclick="showSection('faq')">FAQ</a>
+            <a href="#faq" onclick="showSection('faq')">FAQ</a>
             <a href="#staff" onclick="showSection('jobs')">STAFF</a>
         </nav>
     </header>
@@ -176,6 +219,7 @@
             <div class="job-card">Guide<br><br>Requirements:<br>- Communication skills<br>- Game knowledge and professionalism</div>
             <div class="job-card">Tester<br><br>Requirements:<br>- Detail-oriented<br>- Experience in testing games</div>
         </div>
+        <p class="apply-info">If you are interested to apply for any of these positions, please open a support ticket on our Discord Server!</p>
     </section>
 
     <script>
