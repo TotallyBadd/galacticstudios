@@ -42,12 +42,10 @@
             background-size: contain;
         }
 
-        .discord {
-            background-image: url('https://img.icons8.com/ios-filled/50/ffffff/discord.png');
-        }
-
-        .youtube {
-            background-image: url('https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png');
+        .social-link img {
+            width: 100%;
+            height: auto;
+            display: inline-block;
         }
 
         nav a {
@@ -64,10 +62,11 @@
             transform: scale(1.1);
         }
 
-        #home h1 {
-            font-size: 4em;
+        h1, h2 {
+            font-size: 3em;
             text-shadow: 0 0 15px #ffd700;
             animation: glow 2s ease-in-out infinite alternate;
+            margin-bottom: 20px;
         }
 
         @keyframes glow {
@@ -86,7 +85,7 @@
             animation: fadeInUp 1s ease forwards;
         }
 
-        #home p, .section h2, .section p {
+        #home p, .section p {
             font-size: 1.5em;
             line-height: 1.6;
             background: rgba(0, 0, 0, 0.6);
@@ -132,8 +131,12 @@
     <header>
         <div class="header-left">
             <img src="https://img.icons8.com/?size=80&id=oqrxoYQucToV&format=png" alt="Galactic Studios Logo" class="logo">
-            <a href="https://discord.gg/XFNnCtNCv4" class="social-link discord" target="_blank"></a>
-            <a href="https://youtube.com/@gaIactic-studios" class="social-link youtube" target="_blank"></a>
+            <a href="https://discord.gg/XFNnCtNCv4" class="social-link" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/discord.png" alt="Discord">
+            </a>
+            <a href="https://youtube.com/@gaIactic-studios" class="social-link" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube">
+            </a>
         </div>
         <nav>
             <a href="#" onclick="showSection('home')">Home</a>
@@ -165,15 +168,20 @@
     <section id="jobs" class="section">
         <h2>Join Our Team</h2>
         <div class="job-list">
-            <div class="job-card">Game Developer<br><br>Requirements:<br>- Strong coding skills<br>- Experience with JavaScript and designs</div>
+            <div class="job-card">Game Developer<br><br>Requirements:<br>- Strong coding skills<br>- Experience with Unity/Unreal and JavaScript</div>
             <div class="job-card">Discord Developer<br><br>Requirements:<br>- Experience with Discord API<br>- Strong bot development skills</div>
             <div class="job-card">Web Developer<br><br>Requirements:<br>- HTML, CSS, JavaScript<br>- Web server management</div>
-            <div class="job-card">General Manager<br><br>Requirements:<br>- Leadership experience<br>- Project management skills</div>
+            <div class="job-card">General Manager<br><br>Requirements:<br>- Leadership experience<br>- Project management skills and communication & text-writing skills</div>
             <div class="job-card">Designer/Artist<br><br>Requirements:<br>- Artistic skills<br>- Experience with digital design</div>
-            <div class="job-card">Guide<br><br>Requirements:<br>- Communication skills<br>- Game knowledge</div>
-            <div class="job-card">Tester<br><br>Requirements:<br>- Detail-oriented<br>- Experience testing games</div>
+            <div class="job-card">Guide<br><br>Requirements:<br>- Communication skills<br>- Game knowledge and professionalism</div>
+            <div class="job-card">Tester<br><br>Requirements:<br>- Detail-oriented<br>- Experience in testing games</div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Galactic Studios. All rights reserved.</p>
+    </footer>
 
     <script>
         function showSection(sectionId) {
