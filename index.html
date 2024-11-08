@@ -6,7 +6,6 @@
     <title>Galactic Studios</title>
     <link rel="icon" href="https://img.icons8.com/?size=80&id=oqrxoYQucToV&format=png">
     <style>
-        /* Basic reset */
         * {
             margin: 0;
             padding: 0;
@@ -65,7 +64,6 @@
             transform: scale(1.1);
         }
 
-        /* Main Home Content */
         #home h1 {
             font-size: 4em;
             text-shadow: 0 0 15px #ffd700;
@@ -81,7 +79,6 @@
             }
         }
 
-        /* Content Sections */
         .section {
             display: none;
             padding: 50px;
@@ -99,7 +96,6 @@
             color: #ffd700;
         }
 
-        /* Jobs Section */
         .job-list {
             display: flex;
             flex-wrap: wrap;
@@ -179,13 +175,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Galactic Studios. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Show only selected section
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(section => {
                 section.style.display = 'none';
@@ -193,7 +183,6 @@
             document.getElementById(sectionId).style.display = 'block';
         }
 
-        // Initialize the homepage as the default visible section
         showSection('home');
     </script>
 </body>
