@@ -6,6 +6,7 @@
     <title>Galactic Studios</title>
     <link rel="icon" href="https://img.icons8.com/?size=80&id=oqrxoYQucToV&format=png">
     <style>
+        /* Basic reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,9 +16,13 @@
         body {
             font-family: Arial, sans-serif;
             color: #ffffff;
-            background-image: url('https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY.jpg'); 
+            background-image: url('https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY.jpg');
             background-size: cover;
             background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
         }
 
         header {
@@ -51,27 +56,50 @@
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
             color: #ffd700;
+            transform: scale(1.1);
         }
 
-        main {
+        /* Main Home Content */
+        #home h1 {
+            font-size: 4em;
+            text-shadow: 0 0 15px #ffd700;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700;
+            }
+            to {
+                text-shadow: 0 0 25px #ffd700, 0 0 45px #ffd700, 0 0 60px #ffd700;
+            }
+        }
+
+        /* Content Sections */
+        .section {
+            display: none;
             padding: 50px;
             text-align: center;
+            animation: fadeInUp 1s ease forwards;
         }
 
-        section {
-            padding: 40px 0;
-            animation: fadeIn 1s ease-in;
+        #home p, .section h2, .section p {
+            font-size: 1.5em;
+            line-height: 1.6;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #ffd700;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
+        /* Jobs Section */
         .job-list {
             display: flex;
             flex-wrap: wrap;
@@ -83,7 +111,7 @@
             color: #ffd700;
             margin: 10px;
             padding: 20px;
-            width: 180px;
+            width: 200px;
             text-align: center;
             border-radius: 8px;
             cursor: pointer;
@@ -98,13 +126,13 @@
             text-align: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
-            position: fixed;
-            bottom: 0;
             width: 100%;
+            position: relative;
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="header-left">
             <img src="https://img.icons8.com/?size=80&id=oqrxoYQucToV&format=png" alt="Galactic Studios Logo" class="logo">
@@ -112,57 +140,61 @@
             <a href="https://youtube.com/@gaIactic-studios" class="social-link youtube" target="_blank"></a>
         </div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#contact">Contact</a>
-            <a href="#faq">FAQ</a>
-            <a href="#jobs">Jobs</a>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+            <a href="#" onclick="showSection('faq')">FAQ</a>
+            <a href="#" onclick="showSection('jobs')">Jobs</a>
         </nav>
     </header>
 
-    <main>
-        <section id="home">
-            <h1>Welcome to Galactic Studios</h1>
-            <p>Galactic Studios is a forward-thinking game development company set on creating immersive space experiences!</p>
-        </section>
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Welcome to Galactic Studios</h1>
+        <p>Galactic Studios is on a mission to create out-of-this-world gaming experiences! Join us as we push the boundaries of immersive gameplay set in the vastness of space. Check out our latest projects and explore new worlds!</p>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email us at: <a href="mailto:support@galacticstudios.com">support@galacticstudios.com</a></p>
-        </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email us at: <a href="mailto:support@galacticstudios.com">support@galacticstudios.com</a></p>
+    </section>
 
-        <section id="faq">
-            <h2>FAQ</h2>
-            <p>Find answers to common questions about our projects, mission, and more.</p>
-        </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <h2>FAQ</h2>
+        <p>Find answers to common questions about our projects, mission, and more.</p>
+    </section>
 
-        <section id="jobs">
-            <h2>Join Our Team</h2>
-            <div class="job-list">
-                <div class="job-card">Game Developer</div>
-                <div class="job-card">Discord Developer</div>
-                <div class="job-card">Web Developer</div>
-                <div class="job-card">General Manager</div>
-                <div class="job-card">Designer/Artist</div>
-                <div class="job-card">Guide</div>
-                <div class="job-card">Tester</div>
-            </div>
-        </section>
-    </main>
+    <!-- Jobs Section -->
+    <section id="jobs" class="section">
+        <h2>Join Our Team</h2>
+        <div class="job-list">
+            <div class="job-card">Game Developer<br><br>Requirements:<br>- Strong coding skills<br>- Experience with Unity/Unreal</div>
+            <div class="job-card">Discord Developer<br><br>Requirements:<br>- Experience with Discord API<br>- Strong bot development skills</div>
+            <div class="job-card">Web Developer<br><br>Requirements:<br>- HTML, CSS, JavaScript<br>- Web server management</div>
+            <div class="job-card">General Manager<br><br>Requirements:<br>- Leadership experience<br>- Project management skills</div>
+            <div class="job-card">Designer/Artist<br><br>Requirements:<br>- Artistic skills<br>- Experience with digital design</div>
+            <div class="job-card">Guide<br><br>Requirements:<br>- Communication skills<br>- Game knowledge</div>
+            <div class="job-card">Tester<br><br>Requirements:<br>- Detail-oriented<br>- Experience testing games</div>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Galactic Studios. All rights reserved.</p>
     </footer>
 
     <script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Show only selected section
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
             });
-        });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Initialize the homepage as the default visible section
+        showSection('home');
     </script>
 </body>
 </html>
